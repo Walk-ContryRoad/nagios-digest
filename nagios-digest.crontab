@@ -1,0 +1,23 @@
+################################################################################
+# Nagios Digest
+# Copyright (c) 2012 Tim Schaefer, tim@asystemarchitect.com, 
+# A System Architect: http://www.asystemarchitect.com
+#
+# Modify to suit. Change the path to the wrapper script to match its location.
+#
+# Install with 'crontab -e' or 'crontab -u userid -e' or if the user has no 
+# crontab use 'crontab nagios-status-report.crontab'
+#
+################################################################################
+
+0 6,9,12,15,18,21,23 * * * /root/nagios-digest/wrapper.nagios-digest.sh > /var/log/nagios-digest.log 2>&1
+
+# * * * * * command to be executed
+# - - - - -
+# | | | | |
+# | | | | +------ day of week (0 - 6) (Sunday=0)
+# | | | +------- month (1 - 12)
+# | | +-------- day of month (1 - 31)
+# | +-------- hour (0 - 23)
+# +--------- min (0 - 59)
+
